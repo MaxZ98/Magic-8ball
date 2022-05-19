@@ -7,15 +7,14 @@ const InputField = () => {
   let [prompt, setPrompt] = useState("");
 
   const submitPrompt = () => {
-    console.log(prompt);
-    // axios
-    //   .get(`http://localhost:3000/completionRequest/${prompt}`)
-    //   .then((completionResponse) => {
-    //     console.log(completionResponse.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error, "failed to grab completion response");
-    //   });
+    axios
+      .get(`http://localhost:3000/completionRequest/${prompt}`)
+      .then((completionResponse) => {
+        console.log(completionResponse.data);
+      })
+      .catch((error) => {
+        console.log(error, "failed to grab completion response");
+      });
   };
 
   return (
