@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
+import InputField from "./inputField.js";
 
 function App() {
-  return <div>hello world</div>;
+  return <InputField />;
 }
 
 var mountNode = document.getElementById("app");
