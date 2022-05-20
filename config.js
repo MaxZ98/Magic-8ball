@@ -1,2 +1,2 @@
-API_KEY = "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";
+API_KEY = "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";
 module.exports = API_KEY;

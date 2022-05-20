@@ -8,12 +8,12 @@ const InputField = () => {
 
   const submitPrompt = () => {
     axios
-      .get(`http://localhost:3000/completionRequest/${prompt}`)
+      .post(`http://localhost:3000/completionRequest/${prompt}`)
       .then((completionResponse) => {
         console.log(completionResponse.data);
       })
       .catch((error) => {
-        console.log(error, "failed to grab completion response");
+        console.log(error, "failed to connect to server");
       });
   };
 
