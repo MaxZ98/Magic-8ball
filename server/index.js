@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-const API_KEY = require("../config.js");
+const { API_KEY, AI_Template } = require("../config.js");
 const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 const PORT = 3000;
@@ -14,45 +14,22 @@ app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
 });
 
-app.post("/completionRequest/:prompt", async (req, res) => {
-  //console.log(req.params.prompt);
-  const inputText = req.params.prompt;
-
-  // const config = {
-  //   method: "post",
-  //   url: `https://api.openai.com/v1/engines/text-curie-001/completions`,
-  //   headers: {
-  //     Authorization: `Bearer ${API_KEY}`,
-  //   },
-  //   body: {
-  //     prompt: inputText,
-  //     max_tokens: 100,
-  //     temperature: 0.9,
-  //     n: 1,
-  //     echo: true,
-  //   },
-  // };
-
-  // axios(config)
-  //   .then((completionResponse) => {
-  //     console.log(completionResponse.data);
-  //     //res.status(200).send()
-  //   })
-  //   .catch((error) => {
-  //     //res.status(500).send(error, 'failed to grab completion response')
-  //     console.log(error, "failed to grab");
-  //   });
+app.post("/completionRequest", async (req, res) => {
+  const inputText = req.body.params;
+  const finalPrompt = AI_Template + "Q: " + inputText;
+  //console.log(finalPrompt);
 
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion("text-curie-001", {
-    prompt: inputText,
+    prompt: finalPrompt,
     max_tokens: 100,
-    temperature: 0.9,
+    temperature: 0.5,
     n: 1,
-    echo: true,
+    //echo: true,
   });
-  console.log(response.data.choices);
+  res.status(200).send(response.data.choices[0].text);
+  //console.log(response.data.choices[0].text);
 });

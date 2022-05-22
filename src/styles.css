@@ -1,8 +1,35 @@
 #promptText {
-  width: 50%;
-  height: 500px;
-  font-size: x-large;
+  width: 30%;
+  font-size: large;
   border-radius: 7px;
 }
+
+.response {
+  border: solid;
+  border-radius: 7px;
+  width: 30%;
+  margin-top: 100px;
+
+}
+
+.responseHistory {
+  width: 50%;
+  height: 300px;
+  border-style: solid;
+  border-radius: 7px;
+  margin-top: 50%;
+  overflow: scroll;
+}
+
+#submitButton {
+  margin-top: 15px;
+}
+
+.question {
+  width: 40%;
+}
+
+
+
 
 
