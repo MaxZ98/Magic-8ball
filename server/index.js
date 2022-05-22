@@ -20,7 +20,7 @@ app.post("/completionRequest", async (req, res) => {
   //console.log(finalPrompt);
 
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion("text-curie-001", {

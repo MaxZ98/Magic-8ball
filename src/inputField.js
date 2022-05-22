@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
 
@@ -38,26 +39,40 @@ const InputField = () => {
     <div>
       <Grid container spacing={2}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
-          <h1>
+          <h1 className="title">
             Brutally Honest <br></br> 8Ball
           </h1>
         </Grid>
         <Grid
           item
-          xs={9}
-          className="questionBox"
+          xs={12}
+          id="questionBox"
+          container
+          direction="row"
           alignItems="center"
-          justify="center"
+          justifyContent="center"
         >
           <TextField
+            sx={{
+              "& .MuiInputLabel-root": { color: "white" },
+              borderBottom: "1px solid white",
+            }}
+            InputProps={{ disableUnderline: true }}
             id="standard-basic"
             label="Q:"
             variant="standard"
-            fullWidth={true}
+            //fullWidth={true}
             onChange={(e) => setPrompt(e.target.value)}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid
+          item
+          xs={12}
+          container
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Button
             id="submitButton"
             size="small"
@@ -67,12 +82,26 @@ const InputField = () => {
             SUBMIT
           </Button>
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          container
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+        >
           <div className="response">
             <p className="line-1 anim-typewriter">{eightBallAnswer}</p>
           </div>
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          container
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+        >
           <div className="responseHistory">
             {responseHistory.map((pair) => {
               return (

@@ -1,3 +1,20 @@
+/* body {
+  background-image: url(https://img.freepik.com/free-vector/theater-stage-with-red-curtain-seats-spotlight_259139-144.jpg?w=2000);
+  background-repeat: no-repeat;
+} */
+
+html {
+  background: url(https://img.freepik.com/free-vector/theater-stage-with-red-curtain-seats-spotlight_259139-144.jpg?w=2000g) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.title {
+  color: white;
+}
+
 #promptText {
   width: 30%;
   font-size: large;
@@ -6,10 +23,19 @@
 
 .response {
   border: solid;
-  border-radius: 7px;
-  width: 30%;
-  margin-top: 100px;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  line-height: 300px;
+  margin-top: 20px;
+  background-color: black;
 
+}
+
+.response p {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
 }
 
 .responseHistory {
@@ -17,16 +43,17 @@
   height: 300px;
   border-style: solid;
   border-radius: 7px;
-  margin-top: 50%;
+  margin-top: 70px;
   overflow: scroll;
+  background-color: white;
 }
 
-#submitButton {
-  margin-top: 15px;
+#standard-basic {
+  color: white;
 }
 
-.question {
-  width: 40%;
+#standard-basic-label {
+  color: white;
 }
 
 
