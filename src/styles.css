@@ -21,7 +21,13 @@ html {
   border-radius: 7px;
 }
 
-.response {
+.container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.eightBall {
   border: solid;
   border-radius: 50%;
   width: 400px;
@@ -29,12 +35,46 @@ html {
   line-height: 300px;
   margin-top: 20px;
   background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
 
+}
+
+/* .response {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 300px solid red;
 }
 
 .response p {
   text-align: center;
   vertical-align: middle;
+  color: white;
+} */
+
+.response {
+  width: 0px;
+  height: 0px;
+  border-style: inset;
+  border-width: 250px 150px 0px 150px;
+  border-color: #007bff transparent transparent transparent;
+  position: absolute;
+  top: 130px;
+  left: 54px;
+  z-index: 10;
+}
+
+.response p {
+  text-align: center;
+  bottom: 230px;
+  left: -100px;
+  position: relative;
+  width: 200px;
+  height:130px;
+  margin: 0px;
   color: white;
 }
 
@@ -43,7 +83,7 @@ html {
   height: 300px;
   border-style: solid;
   border-radius: 7px;
-  margin-top: 70px;
+  margin-top: 350px;
   overflow: scroll;
   background-color: white;
 }

@@ -90,8 +90,11 @@ const InputField = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <div className="response">
-            <p className="line-1 anim-typewriter">{eightBallAnswer}</p>
+          <div className="container">
+            <div className="eightBall"></div>
+            <div className="response">
+              <p className="line-1 anim-typewriter">{eightBallAnswer}</p>
+            </div>
           </div>
         </Grid>
         <Grid
