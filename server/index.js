@@ -1,7 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-const { API_KEY, AI_Template } = require("../config.js");
+//const { API_KEY, AI_Template } = require("../config.js");
+const KEY = process.env.API_KEY;
+const Template = process.env.AI_Template;
 const { Configuration, OpenAIApi } = require("openai");
 const app = express();
 const PORT = 3000;
@@ -16,11 +18,11 @@ app.listen(PORT, () => {
 
 app.post("/completionRequest", async (req, res) => {
   const inputText = req.body.params;
-  const finalPrompt = AI_Template + "Q: " + inputText;
+  const finalPrompt = Template + "Q: " + inputText;
   //console.log(finalPrompt);
 
   const configuration = new Configuration({
-    apiKey: API_KEY,
+    apiKey: KEY,
   });
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion("text-curie-001", {
