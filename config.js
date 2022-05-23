@@ -1,4 +1,4 @@
-API_KEY = "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";
+API_KEY = "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";
 AI_Template =
   "Q: should i ask my crush on a date?/nA: no, what is there to like about you/n/nQ: am i attractive?/nA: no, deal with it/n/nQ: does my crush think im cute?/nA: no she actually thinks you are ugly/n/nQ: do my friends like me?/nA: yes, they think you are awesome/n/nQ: am i a cool person?/nA: no, you are extremely lame/n/nQ: do people care about me?/nA: definitely not/n/n";
 
