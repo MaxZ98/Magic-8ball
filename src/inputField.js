@@ -11,11 +11,19 @@ const InputField = () => {
   let [eightBallAnswer, setEightBallAnswer] = useState("");
   let [responseHistory, setResponseHistory] = useState([]);
 
+  const ROUTE =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/completionRequest"
+      : "https://honest8ball.herokuapp.com/completionRequest";
+
   const submitPrompt = () => {
     //const condensedString = prompt.split("/n");
     //console.log(condensedString);
+    //console.log(process.env.NODE_ENV);
+
     axios
-      .post(`http://localhost:3000/completionRequest`, {
+      //do i need to change the local host thing
+      .post(ROUTE, {
         params: prompt,
       })
       .then((completionResponse) => {

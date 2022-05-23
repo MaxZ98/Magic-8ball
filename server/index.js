@@ -4,7 +4,7 @@ const axios = require("axios");
 const cors = require("cors");
 const { Configuration, OpenAIApi } = require("openai");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const key = process.env.API_KEY;
 
 app.use(express.static(__dirname + "/../dist"));
