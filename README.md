@@ -1,1 +1,1 @@
-# shopify-ai
+# Magic 8Ball
